@@ -64,10 +64,43 @@ When the user asks a question:
 
 User asks for a “wiki lint.” Agent checks: contradictions, stale pages vs newer sources, orphans (no inbound wikilinks), missing hub pages for repeated concepts, broken links, and gaps worth a follow-up question. Propose concrete edits; after applying, update `index.md` and append `log.md`.
 
-## Optional local browsing (human)
+## Local Mac workflow (constant query + wiki updates)
 
-- **Obsidian:** Open this folder as a vault. Graph view shows structure; wikilinks work natively.
-- **Plain preview:** from repo root, `python3 -m http.server 8765` then open `http://localhost:8765/wiki/` — browsers won’t render markdown beautifully; Obsidian is the intended “IDE” for the wiki.
+Everything in this repo already lives **on your machine**. The usual loop is: **Cursor** (or another coding agent) reads/writes markdown here; **Obsidian** (optional) is the comfortable reader for `wiki/`.
+
+### Daily loop (recommended)
+
+1. **Open this folder in Cursor** as the project workspace (you already do this).
+2. **Pin or habitually attach** `@AGENTS.md` so every chat follows ingest/query/lint rules.
+3. **Query:** start from `@wiki/index.md` (or `@wiki`) plus `@raw/…` only when the wiki is thin or you need a verbatim passage. Ask in English; ask for answers **filed into `wiki/`** when you want compounding knowledge.
+4. **Ingest:** after copying new files into `raw/`, run one chat per source (or one tight batch): *“Ingest `raw/…` per AGENTS.md.”*
+5. **Git** (optional but useful): commit after a good wiki session so you have a local timeline of changes.
+
+### Obsidian (browse + graph, same files)
+
+1. Install [Obsidian](https://obsidian.md/) on the Mac.
+2. **File → Open folder as vault…** and choose **this repository root** (the folder that contains `raw/`, `wiki/`, and `AGENTS.md`).
+3. Keep Obsidian open beside Cursor: you see graph, backlinks, and `[[wikilinks]]` instantly when the agent edits the wiki.
+
+From the repo root you can also run:
+
+```bash
+./scripts/open-obsidian-vault.sh
+```
+
+That tries to open this folder in Obsidian (falls back to revealing the folder in Finder if Obsidian is not installed).
+
+### Optional: stronger local search (when `index.md` is not enough)
+
+If the wiki grows large, add a **local** search tool the agent can call from the terminal, for example [qmd](https://github.com/tobi/qmd) (hybrid search over markdown on-device). Not required at small scale.
+
+### Optional: fully local language models
+
+Cursor’s chat typically uses whatever model you configure in Cursor (often cloud). If you need **models running only on your Mac**, use **Ollama** or **LM Studio** and a client that talks to them (e.g. local agent plugins, or run queries there and paste summaries back into this repo). The **files** (`raw/`, `wiki/`) stay the same regardless of which LLM edits them.
+
+### Plain preview (weak but zero-install)
+
+`python3 -m http.server 8765` from the repo root, then open `http://localhost:8765/wiki/` — browsers do not render markdown as nicely as Obsidian.
 
 ## Safety
 

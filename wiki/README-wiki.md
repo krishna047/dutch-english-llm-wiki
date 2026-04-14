@@ -10,10 +10,16 @@ tags: [meta, english-wiki]
 
 This vault is the **compiled layer**: summaries and links in **English**, built from documents that may be **Dutch** in `raw/`.
 
+## Start here
+
+- [[index]] — full page catalog
+- [[vve-matterhorn-2-48]] — hub for the Matterhorn 2–48 association (Amstelveen)
+- [[utilities-nutsvoorzieningen-water-electricity]] — how “water” appears in VvE accounts vs a personal bill
+
 ## How to use
 
-1. Add Dutch (or any) documents under `raw/`.
-2. In Cursor (or another agent), say: **Ingest** `<filename>` — the agent will read `AGENTS.md` and update this wiki plus [[index]].
-3. Ask questions in **English**; answers should cite wiki pages and raw files where relevant.
+1. Add or keep originals under `raw/`.
+2. In Cursor, `@AGENTS.md` and ask to **ingest** or **update the wiki** after new sources arrive.
+3. Ask questions in **English**; answers should cite wiki pages and `raw/...` files.
 
-See the repository root **`AGENTS.md`** for full maintainer rules.
+Repository rules and workflows: **`AGENTS.md`** (repo root).
