@@ -41,8 +41,8 @@ tags: [tag-one, tag-two]
 2. Agent **reads** the source, identifies entities, dates, claims, and open questions.
 3. Agent **updates the wiki:** new/updated pages, cross-links, contradictions called out explicitly.
 4. Agent **updates `wiki/index.md`** (add/move entries, refresh one-liners).
-5. Agent **appends `wiki/log.md`** with a line like:  
-   `## [YYYY-MM-DD] ingest | <short source title> | raw/<filename>`
+5. Agent **appends `wiki/log.md`** with a line like:
+  `## [YYYY-MM-DD] ingest | <short source title> | raw/<filename>`
 6. If the source is large, **split work**: ingest in logical chunks and log each chunk; still keep one primary `sources/` summary page per file.
 
 ## Query workflow (English answers, neat formatting)
@@ -51,14 +51,12 @@ When the user asks a question:
 
 1. **Skim `wiki/index.md`** to find candidate pages; open the most relevant pages (and `raw/` only if the wiki is missing detail or looks stale).
 2. **Answer in English** using this structure unless the user asks otherwise:
-
-   - **TL;DR** — 2–4 bullets or one short paragraph.
-   - **Details** — `##` sections with clear headings.
-   - **Sources** — bullet list: wiki pages (`[[Page]]`) and `raw/filename` where applicable.
-   - Use **tables** for comparisons, **numbered steps** for procedures, and **bold labels** for definitions — keep it scannable.
-
-3. If the answer is **durable value** (e.g. recurring FAQ, deep synthesis), **add or update a wiki page** and link it from the chat reply. Append a `log.md` entry:  
-   `## [YYYY-MM-DD] query-filed | <page title> | <one line why>`
+  - **TL;DR** — 2–4 bullets or one short paragraph.
+  - **Details** — `##` sections with clear headings.
+  - **Sources** — bullet list: wiki pages (`[[Page]]`) and `raw/filename` where applicable.
+  - Use **tables** for comparisons, **numbered steps** for procedures, and **bold labels** for definitions — keep it scannable.
+3. If the answer is **durable value** (e.g. recurring FAQ, deep synthesis), **add or update a wiki page** and link it from the chat reply. Append a `log.md` entry:
+  `## [YYYY-MM-DD] query-filed | <page title> | <one line why>`
 
 ## Lint workflow (periodic)
 
