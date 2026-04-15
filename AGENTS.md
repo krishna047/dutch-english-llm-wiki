@@ -96,6 +96,8 @@ If the wiki grows large, add a **local** search tool the agent can call from the
 
 Cursor’s chat typically uses whatever model you configure in Cursor (often cloud). If you need **models running only on your Mac**, use **Ollama** or **LM Studio** and a client that talks to them (e.g. local agent plugins, or run queries there and paste summaries back into this repo). The **files** (`raw/`, `wiki/`) stay the same regardless of which LLM edits them.
 
+**CLI (no `@AGENTS.md` in chat):** from the repo root, install [Ollama](https://ollama.com/), pull a model (`ollama pull llama3.2`), then run **`./query.py "Your question"`** or **`./query.py --interactive`**. The script always loads **`AGENTS.md`** and all **`wiki/**/*.md`**, then calls Ollama’s local HTTP API. Optional: **`./query.py --raw-grep patroon "question"`** (requires `brew install ripgrep`) to attach matching lines from `raw/`.
+
 ### Plain preview (weak but zero-install)
 
 `python3 -m http.server 8765` from the repo root, then open `http://localhost:8765/wiki/` — browsers do not render markdown as nicely as Obsidian.

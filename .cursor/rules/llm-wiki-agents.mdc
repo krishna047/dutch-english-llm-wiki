@@ -1,0 +1,14 @@
+---
+description: Follow AGENTS.md for this Dutch→English LLM wiki repo (ingest, query, wiki rules).
+alwaysApply: true
+---
+
+# LLM wiki (this repository)
+
+When working in **this** project:
+
+- Read and follow **`AGENTS.md`** at the repo root for: `raw/` immutable sources, English **`wiki/`**, **`wiki/index.md`** / **`wiki/log.md`**, ingest/query/lint behavior, Dutch→English language policy, and citation style.
+- Prefer answering from the **compiled wiki** first; use **`raw/`** when the wiki is missing or needs verification.
+- For **local-only** Q&A without attaching `@AGENTS.md` in chat, the maintainer can run **`./query.py`** (Ollama); that script loads `AGENTS.md` automatically.
+
+Do not invent project-specific rules that contradict **`AGENTS.md`**.
